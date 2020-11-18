@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>YouForever - Dashboard</title>
+    <link rel="stylesheet" href="http://localhost:3000/style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header class="dashhead">
+        <nav>
+          <a href="/">Home</a>
+          <p id="name"></p>
+          <a href="/logout">logout</a>
+        </nav>
+      </header>
+      <main class="dashmain">
+        <div class="myaccount">
+          <h2>My account</h2>
+          <p id="aname">Username:</p>
+          <p id="amail">Mail:</p>
+          <p id="aphone">Phone:</p>
+        </div>
+        <div class="feepay">
+          <h2>Payment and Bills</h2>
+          <p>Last paid: --</p>
+          <p>Expires on: --</p>
+        </div>
+        <div class="goal">
+          <h2>Join our weekly program</h2>
+          <a class="join" id="joinbtn" href="#">Join now</a>
+        </div>
+        <div id="content">
+          <img src="/content.jpg" alt="please try again" />
+        </div>
+      </main>
+    </div>
+    <script>
+      let href = window.location.href;
+      href = href.split("/");
+      let id = href[href.length - 1];
+      fetch("/user/" + id)
+        .then((res) => res.json())
+        .then((data) => {
+          let headName = document.getElementById("name");
+          headName.innerHTML = `Welcome <b>${data.name}</b>`;
+          let aname = document.getElementById("aname");
+
+          let amail = document.getElementById("amail");
+          let aphone = document.getElementById("aphone");
+          [aname.innerHTML, amail.innerHTML, aphone.innerHTML] = [
+            ` Username: <b>${data.name}</b>`,
+            `Your mail: <b>${data.email}</b>`,
+            `Your Phone:  <b>${data.phone}</b>`,
+          ];
+        });
+      let join = document.getElementById("joinbtn");
+      let content = document.getElementById("content");
+      join.addEventListener("click", function () {
+        content.classList.toggle("imgs");
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>gym</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="bgimage"></div>
+      <header>
+        <nav>
+          <a href="/" class="navbrand">YouForever</a>
+          <ul class="navul">
+            <li class="navli">
+              <a href="/" class="active">Home</a>
+            </li>
+            <li class="navli">
+              <a href="/register">Register</a>
+            </li>
+            <li class="navli">
+              <a href="#contact">Contact</a>
+            </li>
+            <li class="navli">
+              <a href="/login">Login</a>
+            </li>
+          </ul>
+        </nav>
+      </header>
+      <main>
+        <section class="hero-section">
+          <h1>You are your own sculptor</h1>
+          <p>
+            Cardio machines, weights, body-weight training equipment, and yoga
+            classes to help bring your training to the next level.
+          </p>
+          <a href="/register" class="cta">Register</a>
+        </section>
+        <div class="sectionandlogin">
+          <section class="about">
+            <h2>About</h2>
+            <p>
+              YouForever focuses on placing its attendees in different classes,
+              and after a class you to find out how you performed. YouForever
+              has excellent facilities such as a smoothie bar, superlative
+              lockers, and a lounge.
+            </p>
+            <p>
+              This gym offers one of the best indoor climbing services in the
+              country. Moreover, it has the best strength training and cardio
+              equipment, which help improve the climbing abilities of its
+              clientele. Its website has a clear, chic design; with social media
+              links prominently displayed on its home page. Moreover, they show
+              full contact information on the home page; and this builds its
+              credibility and enables new clients to inquire more about the
+              services of the gym effectively.
+            </p>
+          </section>
+          <section class="login">
+            <h2>Login</h2>
+            <form action="/login" method="POST">
+              <div class="formgroup">
+                <label for="loginemail"> Email</label>
+                <input
+                  type="email"
+                  name="email"
+                  id="loginemail"
+                  placeholder="e.g youforever@youmail.com"
+                  required
+                />
+              </div>
+              <div class="formgroup">
+                <label for="loginpass">Password</label>
+                <input
+                  type="password"
+                  name="password"
+                  id="loginpass"
+                  placeholder="******"
+                  required
+                />
+              </div>
+              <input type="submit" value="Login" />
+            </form>
+          </section>
+        </div>
+        <section class="contact-section" id="contact">
+          <h2>Contact us</h2>
+          <ul class="conul">
+            <li class="conli"><b>Address</b> 123,Boston road, Chicago.</li>
+            <li><b>Phone</b>999999999</li>
+            <li><b>Mail</b>youforever@youmail.com</li>
+          </ul>
+        </section>
+      </main>
+      <footer>
+        <p>All rights reserved. &copy; 2020</p>
+      </footer>
+    </div>
+  </body>
+</html>

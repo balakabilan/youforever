@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+    <style>
+      /* a {
+        color: black !important;
+      }
+      .active::after {
+        background: black;
+      } */
+    </style>
+  </head>
+  <body>
+    <div class="register-bg"></div>
+    <header>
+      <nav>
+        <a href="/" class="navbrand">YouForever</a>
+        <ul class="navul">
+          <li class="navli">
+            <a href="/">Home</a>
+          </li>
+          <li class="navli">
+            <a href="/register" class="active">Register</a>
+          </li>
+          <li class="navli">
+            <a href="/#contact">Contact</a>
+          </li>
+          <li class="navli">
+            <a href="/login">Login</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <form class="register-form" action="/register" method="POST">
+        <h2>Register</h2>
+        <div class="formgroup">
+          <label for="name">Name</label>
+          <input
+            type="text"
+            name="name"
+            id="name"
+            required
+            placeholder="e.g John Doe"
+          />
+        </div>
+        <div class="formgroup">
+          <label for="phone">Phone</label>
+          <input
+            type="text"
+            name="phone"
+            id="phone"
+            required
+            placeholder="e.g 9999999999"
+          />
+        </div>
+        <div class="formgroup">
+          <label for="Email">Email</label>
+          <input
+            type="email"
+            name="email"
+            id="Email"
+            required
+            placeholder="e.g youforever@youmail.com"
+          />
+        </div>
+        <div class="formgroup">
+          <label for="password">Password</label>
+          <input
+            type="password"
+            name="password"
+            id="password"
+            required
+            placeholder="choose a strong password"
+          />
+        </div>
+        <input type="submit" value="Register" />
+        <p class="already">
+          Already a member?
+          <a style="color: rgb(51, 145, 177)" href="/login">Login</a>
+        </p>
+      </form>
+    </main>
+  </body>
+</html>
