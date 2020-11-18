@@ -137,7 +137,7 @@ app.post("/register", (req, res) => {
       col.insertOne(data, function (error, success) {
         if (error) throw error;
         console.log("inserted ");
-        res.render(__dirname + "/public/login");
+        res.render(__dirname + "/public/login", { message: ''} );
         client.close();
       });
     }
