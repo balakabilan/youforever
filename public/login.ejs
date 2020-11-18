@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="register-bg"></div>
+    <header>
+      <nav>
+        <a href="/" class="navbrand">YouForever</a>
+        <ul class="navul">
+          <li class="navli">
+            <a href="/" class="active">Home</a>
+          </li>
+          <li class="navli">
+            <a href="/register">Register</a>
+          </li>
+          <li class="navli">
+            <a href="#contact">Contact</a>
+          </li>
+          <li class="navli">
+            <a href="/login">Login</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <form class="lpage" action="/login" method="POST">
+        <h2>Login</h2>
+        <div class="formgroup">
+          <label for="loginemail"> Email</label>
+          <input
+            type="email"
+            name="email"
+            id="loginemail"
+            placeholder="e.g youforever@youmail.com"
+            required
+          />
+        </div>
+        <div class="formgroup">
+          <label for="loginpass">Password</label>
+          <input
+            type="password"
+            name="password"
+            id="loginpass"
+            placeholder="******"
+            required
+            autocomplete="current-password"
+          />
+        </div>
+        <div class="message"><%= message %></div>
+        <input type="submit" value="Login" />
+        <p>Not a user? <a href="/register">Register</a></p>
+      </form>
+    </main>
+  </body>
+</html>
