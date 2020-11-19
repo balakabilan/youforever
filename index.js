@@ -4,7 +4,7 @@ const PORT = process.env.PORT || 3000;
 //Express
 const express = require("express");
 const app = express();
-
+const bcrypt = require('bcrypt');
 let flash = require("connect-flash");
 
 const mongodb = require("mongodb");
