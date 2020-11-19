@@ -67,7 +67,7 @@ passport.use(
               client.close();
               return done(null, false, req.flash("message", "Incorrect Email"));
             }
-            if (!(user.password == password)) {
+            if (!bcrypt.compareSync(password, user.password)) {
               client.close();
 
               return done(
@@ -121,11 +121,12 @@ app.get("/dashboard/:id", checkAuth, (req, res) => {
 });
 
 app.post("/register", (req, res) => {
+  let ePassword = bcrypt.hashSync(req.body.password, 10);
   let data = {
     name: req.body.name,
     email: req.body.email,
     phone: req.body.phone,
-    password: req.body.password,
+    password: ePassword,
   };
   MongoClient.connect(
     MONGO_URI,
